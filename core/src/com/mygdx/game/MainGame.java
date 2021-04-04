@@ -8,8 +8,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MainGame extends Game {
+	public MainGameScreen gameScreen;
+	public GameOverScreen gameOverScreen;
+	public MenuScreen menuScreen;
 	@Override
 	public void create () {
-		setScreen(new MainGameScreen(this));
+		menuScreen=new MenuScreen(this);
+		gameScreen=new MainGameScreen(this);
+		gameOverScreen=new GameOverScreen(this);
+		setScreen(menuScreen);
 	}
 }

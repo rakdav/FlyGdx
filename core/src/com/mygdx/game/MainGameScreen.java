@@ -53,6 +53,7 @@ public class MainGameScreen extends BaseScreen {
         {
             System.out.println("Colision");
             jugador.setAlive(false);
+            game.setScreen(game.gameOverScreen);
         }
     }
     @Override
