@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.actors.ActorJugador;
 import com.mygdx.game.actors.ActorPinchos;
@@ -60,4 +61,5 @@ public class MainGameScreen extends BaseScreen {
     public void dispose() {
         textureJugator.dispose();
     }
+
 }

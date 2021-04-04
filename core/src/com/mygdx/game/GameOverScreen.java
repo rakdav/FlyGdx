@@ -27,13 +27,13 @@ public class GameOverScreen extends BaseScreen {
         retry.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-
+                game.setScreen(game.gameScreen);
             }
         });
         menu.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-
+                game.setScreen(game.menuScreen);
             }
         });
         gameover.setPosition(520-gameover.getWidth(),320-gameover.getHeight());

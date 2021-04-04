@@ -26,7 +26,7 @@ public class MenuScreen extends BaseScreen
         retry.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-
+                game.setScreen(game.gameScreen);
             }
         });
         gameover.setPosition(320-gameover.getWidth(),320-gameover.getHeight());
