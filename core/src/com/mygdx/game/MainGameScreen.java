@@ -9,6 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.actors.ActorJugador;
 import com.mygdx.game.actors.ActorPinchos;
 
+import sun.rmi.runtime.Log;
+
 
 public class MainGameScreen extends BaseScreen {
     private Stage stage;
@@ -29,9 +31,9 @@ public class MainGameScreen extends BaseScreen {
         jugador=new ActorJugador(textureJugator);
         pinchos=new ActorPinchos(regionPinchos);
         stage.addActor(jugador);
-        stage.addActor(pinchos);
+//        stage.addActor(pinchos);
         jugador.setPosition(20,100);
-        pinchos.setPosition(500,100);
+   //     pinchos.setPosition(500,100);
     }
 
     @Override
@@ -44,9 +46,14 @@ public class MainGameScreen extends BaseScreen {
         Gdx.gl.glClearColor(0.4f,0.5f,0.8f,1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();
-        comprobarColisiones();
+        if(Gdx.input.isTouched()){
+            jugador.setX(Gdx.input.getX());
+            jugador.setY(Gdx.graphics.getHeight()-Gdx.input.getY());
+        }
         stage.draw();
     }
+
+
 
     private void comprobarColisiones()
     {

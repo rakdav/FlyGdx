@@ -8,6 +8,7 @@ public class ActorJugador extends Actor
 {
     private Texture jugator;
     private boolean alive;
+    private float x,y;
 
     public boolean isAlive() {
         return alive;
@@ -15,6 +16,16 @@ public class ActorJugador extends Actor
 
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    @Override
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    @Override
+    public void setY(float y) {
+        this.y = y;
     }
 
     public ActorJugador(Texture jugator) {
@@ -30,6 +41,6 @@ public class ActorJugador extends Actor
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        batch.draw(jugator, getX(),getY());
+        batch.draw(jugator, x,y);
     }
 }
